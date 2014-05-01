@@ -1,1 +1,61 @@
-Add a course
+<div class='large-12 large-offset-0 medium-12 medium-offset-0 small-12 small-offset-0 columns'>
+  <h3>Add a New Course</h3>
+
+  <%= form_for @course do |f| %>
+    <div class='row collapse'>
+      <div class='small-3 large-2 columns'>
+        <span class='prefix'>Title</span>
+      </div>
+      <div class='small-9 large-10 columns'>
+        <%= f.text_field :name, placeholder: 'SAAS for Mobile...' %>
+      </div>
+    </div>
+
+    <div class='row collapse'>
+      <div class='small-3 large-2 columns'>
+        <span class='prefix'>School</span>
+      </div>
+      <div class='small-9 large-10 columns'>
+        <%= f.text_field :school, placeholder: 'MIT' %>
+      </div>
+    </div>
+
+    <div class='row collapse'>
+      <div class='small-3 large-2 columns'>
+        <span class='prefix'>Course #</span>
+      </div>
+      <div class='small-9 large-10 columns'>
+        <%= f.text_field :course_id, placeholder: '6.006' %>
+      </div>
+    </div>
+
+    <div class='row collapse'>
+      <div class='small-3 large-2 columns'>
+        <span class='prefix'>URL</span>
+      </div>
+      <div class='small-9 large-10 columns'>
+        <%= f.text_field :url, placeholder: 'http://website.com' %>
+      </div>
+    </div>
+
+    <div class='row collapse'>
+      <div class='small-3 large-2 columns'>
+        <span class='prefix'>Description</span>
+      </div>
+      <div class='small-9 large-10 columns'>
+        <%= f.text_field :description, placeholder: 'This courses teaches about..' %>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='large-8 columns'>
+        <div class='row collapse'>
+          <div class='small-3 columns'>
+            <%= f.submit 'Submit', class: 'default button expand' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+</div>
