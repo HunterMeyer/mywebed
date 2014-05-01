@@ -9,6 +9,7 @@ gem 'foundation-rails'
 gem 'awesome_print'
 gem 'json'
 gem 'will_paginate'
+gem 'strong_parameters'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
