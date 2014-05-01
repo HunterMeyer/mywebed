@@ -20,6 +20,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    @note = Note.new
   end
 
   def edit
