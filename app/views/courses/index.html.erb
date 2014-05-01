@@ -10,8 +10,8 @@
     <tbody>
       <% @courses.each do |c| %>
         <tr>
-          <td class='large-6 medium-6 small-6'><%= link_to c.name, c.url, target: '_blank' %></td>
-          <td class='large-5 medium-5 small-5'><%= c.school %></td>
+          <td class='large-6 medium-6 small-6'><%= link_to c.name, course_path(params[:id] = c.id) %></td>
+          <td class='large-5 medium-5 small-5'><%= link_to c.school, c.url, target: '_blank' %></td>
           <td class='large-1 medium-1 small-1'><%= case c.started when 't' then 'Yes' else 'No' end %></td>
         </tr>
       <% end %>
