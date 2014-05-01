@@ -1,18 +1,20 @@
-<table id='courses' class='display'>
-  <thead>
-    <tr>
-      <th>Course</th>
-      <th>School</th>
-      <th>Started</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @courses.each do |c| %>
+<div class='large-12 large-offset-0 medium-12 medium-offset-0 small-12 small-offset-0 columns'>
+  <table id='courses' class='display'>
+    <thead>
       <tr>
-        <td class='large-6 medium-6 small-6'><%= link_to c.name, c.url %></td>
-        <td class='large-5 medium-5 small-5'><%= c.school %></td>
-        <td class='large-1 medium-1 small-1'><%= case c.started when 't' then 'Yes' else 'No' end %></td>
+        <th>Course</th>
+        <th>School</th>
+        <th>Started</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @courses.each do |c| %>
+        <tr>
+          <td class='large-6 medium-6 small-6'><%= link_to c.name, c.url %></td>
+          <td class='large-5 medium-5 small-5'><%= c.school %></td>
+          <td class='large-1 medium-1 small-1'><%= case c.started when 't' then 'Yes' else 'No' end %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
