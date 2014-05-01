@@ -4,14 +4,17 @@ class NotesController < ApplicationController
     @note = Note.create(note_params)
     if @note.save
       flash[:success] = 'Note Saved'
-      redirect_to course_path(params[:id] => @note.course_id)
+      redirect_to course_path(@note.course_id)
     else
       render 'new'
     end
   end
 
   def destroy
-    Note.find(params[:id]).destroy
+    @note = Note.find(params[:id])
+    @course = @note.course_id
+    @note.destroy
+    redirect_to course_path(@course)
   end
 
   private
