@@ -48,6 +48,15 @@
       </div>
     </div>
 
+    <div class='row collapse'>
+      <div class='small-3 large-2 columns'>
+        <span class='prefix'>Started</span>
+      </div>
+      <div class='small-9 large-10 columns'>
+        <%= f.select :started, [['Have you started the course yet?', nil], ['Yes', true], ['No', false]]%>
+      </div>
+    </div>
+
     <div class='row'>
       <div class='large-8 columns'>
         <div class='row collapse'>
@@ -57,6 +66,5 @@
         </div>
       </div>
     </div>
-
   <% end %>
 </div>
