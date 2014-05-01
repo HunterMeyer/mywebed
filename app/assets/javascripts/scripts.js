@@ -1,0 +1,3 @@
+$('#courses').dataTable({
+  "sPaginationType": "foundation"
+});
