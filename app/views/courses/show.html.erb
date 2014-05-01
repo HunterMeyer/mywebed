@@ -6,6 +6,21 @@
     <li><%= @course.course_id %> | <b><%= case @course.started when true then 'Started' else 'Not Started' end %></b></li>
     <li class='description'><%= @course.description %></li>
   </ul>
+  <%= form_for @note do |f| %>
+    <div class='row'>
+      <div class='large-12 columns'>
+        <div class='row collapse'>
+          <div class='small-10 columns'>
+            <%= f.text_field :content, placeholder: 'Add a new note...' %>
+            <%= f.hidden_field :course_id, value: @course.id %>
+          </div>
+          <div class='small-2 columns'>
+            <%= f.submit '+', class: 'button postfix' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
   <ul class='vcard large-12 medium-12 small-12'>
     <% if @course.notes.blank? %>
       <li>No notes added...</li>
@@ -19,19 +34,4 @@
       <% end %>
     <% end %>
   </ul>
-  <%= form_for @note do |f| %>
-    <div class='row'>
-      <div class='large-12 columns'>
-        <div class='row collaspe'>
-          <div class='small-10 columns'>
-            <%= f.text_area :content, rows:2, placeholder: 'Add a new note...' %>
-            <%= f.hidden_field :course_id, value: @course.id %>
-          </div>
-          <div class='small-2 columns'>
-            <%= f.submit '+', class: 'default button expand' %>
-          </div>
-        </div>
-      </div>
-    </div>
-  <% end %>
 </div>
