@@ -13,7 +13,7 @@ class CoursesController < ApplicationController
       flash[:success] = 'Course Created'
       redirect_to course_path
     else
-      flash[:warning] = 'Something is missing'
+      flash[:warning] = 'Something is Missing'
       render 'new'
     end
   end
@@ -32,7 +32,7 @@ class CoursesController < ApplicationController
       flash[:success] = 'Course Updated'
       redirect_to course_path
     else
-      flash[:warning] = 'Something is missing.'
+      flash[:warning] = 'Something is Missing'
       render 'edit'
     end
   end
@@ -44,6 +44,6 @@ class CoursesController < ApplicationController
 
   private
   def course_params
-    params.require(:course).permit()
+    params.require(:course).permit(:name, :school, :course_id, :url, :description, :started)
   end
 end
