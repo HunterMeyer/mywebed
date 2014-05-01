@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
     @course = Course.create(course_params)
     if @course.save
       flash[:success] = 'Course Created'
-      redirect_to course_path
+      redirect_to course_path(params[:id] = @course.id)
     else
       flash[:warning] = 'Something is Missing'
       render 'new'
