@@ -29,7 +29,7 @@
         <li>
           <span class='delete'><%= link_to 'X', note, method: :delete %></span>
           <span class='muted'><%= note.created_at.strftime('%m/%d') %></span>
-           | <%= note.content %>
+           | <%= markdown(note.content) %>
         </li>
       <% end %>
     <% end %>
