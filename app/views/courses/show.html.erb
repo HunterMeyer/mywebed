@@ -10,8 +10,8 @@
     <div class='row'>
       <div class='large-12 columns'>
         <div class='row collapse'>
-          <div class='small-10 columns'>
-            <%= f.text_field :content, placeholder: 'Add a new note...' %>
+          <div class='small-12 columns'>
+            <%= f.text_area :content, rows: 5, placeholder: 'Add some notes (you can use HTML)...' %>
             <%= f.hidden_field :course_id, value: @course.id %>
           </div>
           <div class='small-2 columns'>
