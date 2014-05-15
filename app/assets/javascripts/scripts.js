@@ -4,3 +4,5 @@ $('#courses').dataTable({
   "aaSorting": [[2, "desc"]]
 });
 $('#courses_filter').children().children().attr("placeholder", "course, school...");
+
+$('.best_in_place').best_in_place();
