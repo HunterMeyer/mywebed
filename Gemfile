@@ -12,6 +12,7 @@ gem 'will_paginate'
 gem 'rails_12factor'
 gem 'sprockets', '2.11.0'
 gem 'redcarpet'
+gem 'best_in_place', github: 'bernat/best_in_place'
 
 group :assets do
   gem 'sass-rails'

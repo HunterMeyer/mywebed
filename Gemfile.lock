@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/bernat/best_in_place.git
+  revision: df178520bf9ba405baee9528d5dbb630d6ff760c
+  specs:
+    best_in_place (2.1.0)
+      jquery-rails
+      rails (>= 3.1)
+
+GIT
   remote: git://github.com/rweng/jquery-datatables-rails.git
   revision: 477e49a649c8d862988298bc96a93e030d023e0e
   specs:
@@ -132,6 +140,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  best_in_place!
   foundation-rails
   jquery-datatables-rails!
   jquery-rails
