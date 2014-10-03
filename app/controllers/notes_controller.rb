@@ -10,6 +10,19 @@ class NotesController < ApplicationController
     end
   end
 
+  def edit
+    @note = Note.find(params[:id])
+  end
+
+  def update
+    @note = Note.find(params[:id])
+    respond_to do |format|
+      if @note.update(note_params)
+        format.json { respond_with_bip @note }
+      end
+    end
+  end
+
   def destroy
     @note = Note.find(params[:id])
     @course = @note.course_id
