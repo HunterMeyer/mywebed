@@ -30,8 +30,11 @@ class CoursesController < ApplicationController
   def update
     @course = Course.find(params[:id])
     if @course.update(course_params)
-      flash[:success] = 'Course Updated'
-      redirect_to course_path
+      respond_to do |format|
+        format.html { flash[:success] = 'Course Updated'
+                      redirect_to course_path }
+        format.json { respond_with_bip(@course) }
+      end
     else
       flash[:warning] = 'Something is Missing'
       render 'edit'
@@ -45,6 +48,6 @@ class CoursesController < ApplicationController
 
   private
   def course_params
-    params.require(:course).permit(:name, :school, :course_id, :url, :description, :started)
+    params.require(:course).permit(:name, :school, :course_id, :url, :description, :started, :favorited)
   end
 end

@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  
+
   def create
     @note = Note.create(note_params)
     if @note.save
@@ -16,8 +16,8 @@ class NotesController < ApplicationController
 
   def update
     @note = Note.find(params[:id])
-    respond_to do |format|
-      if @note.update(note_params)
+    if @note.update(note_params)
+      respond_to do |format|
         format.json { respond_with_bip @note }
       end
     end
