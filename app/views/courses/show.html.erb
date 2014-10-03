@@ -29,7 +29,7 @@
         <li>
           <span class='delete'><%= link_to 'X', note, method: :delete %></span>
           <span class='muted'><%= note.created_at.strftime('%m/%d') %></span>
-           | <%= markdown(note.content) %>
+          <p><%= best_in_place note, :content, type: :textarea, display_as: :markdown %></p>
         </li>
       <% end %>
     <% end %>
