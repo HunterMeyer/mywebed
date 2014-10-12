@@ -5,6 +5,7 @@
   <table id='courses' class='display'>
     <thead>
       <tr>
+        <th>Site</th>
         <th>Course</th>
         <th>School</th>
         <th>Started</th>
@@ -13,7 +14,8 @@
     <tbody>
       <% @courses.each do |c| %>
         <tr>
-          <td class='large-6 medium-6 small-6'><%= link_to c.name, course_path(c.id) %></td>
+          <td class='large-1 medium-1 small-1'><%= c.site %></td>
+          <td class='large-5 medium-5 small-5'><%= link_to c.name, course_path(c.id) %></td>
           <td class='large-5 medium-5 small-5'><%= link_to c.school, c.url, target: '_blank' %></td>
           <td class='large-1 medium-1 small-1'><%= c.started ? 'Yes' : 'No' %></td>
         </tr>
