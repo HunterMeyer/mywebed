@@ -3,7 +3,7 @@
     <h5><b><%= @course.name %></b> | <%= link_to school_name_and_site(@course), @course.url, target: '_blank' %></h5>
   </div>
   <ul class='vcard panel radius large-12 medium-12 small-12'>
-    <li><%= link_to 'Edit', edit_course_path(@course.id) %> | <b><%= case @course.started when true then 'Started' else 'Not Started' end %></b></li>
+    <li><%= link_to 'Edit', edit_course_path(@course.id) %> | <b><%= @course.started %></b></li>
     <li class='description'><%= @course.description %></li>
   </ul>
   <%= form_for @note do |f| %>
